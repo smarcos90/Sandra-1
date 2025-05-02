@@ -104,6 +104,30 @@ class Ave extends Animal {
     }
 }
 
+// SUBCLASE: REPTILES
+class Reptil extends Animal{
+    private boolean tienePatas;
+    
+    public Reptil(String nombre, int edad, String tipoAlimentacion, boolean tienePatas) {
+        super(nombre, edad, tipoAlimentacion);
+    }
+
+    @Override
+    public void hacerSonido() {
+        System.out.println("El reptil " + nombre + " está gruniendo");
+    }
+
+    @Override
+    public void moverse() {
+        if(tienePatas){
+            System.out.println("El reptil " + nombre + " puede andar");
+        }else{
+            System.out.println("El reptil " + nombre + " se arrastra por el suelo");
+        }
+    }
+    
+}
+
 // * CLASE PRINCIPAL: GESTIÓN DEL ZOOLÓGICO
 public class UT3_POO_ZooGestion {
     public static void main(String[] args) {
@@ -117,6 +141,9 @@ public class UT3_POO_ZooGestion {
         animales.add(new Ave("Águila", 3, "Carnívoro", true));
         animales.add(new Mamifero("Elefante", 10, "Herbívoro", false));
         animales.add(new Ave("Pingüino", 2, "Omnívoro", false));
+        animales.add(new Reptil("Serpiente", 7, "Carnívoro", false));
+        animales.add(new Reptil("Tortuga", 15, "Hervíbora", true));
+
 
         // ! MOSTRAMOS INFORMACIÓN DE LOS ANIMALES
         System.out.println("\n🌿 🦁 Animales en el zoológico:");
